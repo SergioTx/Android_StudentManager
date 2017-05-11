@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <!--<item
+            android:id="@+id/navigation_assistance"
+            android:enabled="true"
+            android:icon="@drawable/absence"
+            android:title="@string/title_assistance" />-->
+
+        <item
+            android:id="@+id/navigation_tasks"
+            android:enabled="true"
+            android:icon="@drawable/task"
+            android:title="@string/title_tasks" />
+
+        <item
+            android:id="@+id/navigation_timetable"
+            android:enabled="true"
+            android:icon="@drawable/timetable"
+            android:title="@string/title_timetable" />
+
+        <item
+            android:id="@+id/navigation_exams"
+            android:enabled="true"
+            android:icon="@drawable/exam"
+            android:title="@string/title_exams" />
+
+        <!--<item
+            android:id="@+id/navigation_calendar"
+            android:enabled="true"
+            android:icon="@drawable/calendar"
+            android:title="@string/title_calendar" />-->
+
+        <item
+            android:id="@+id/navigation_subjects"
+            android:icon="@drawable/subject"
+            android:title="@string/subjects" />
+
+        <!--<item
+            android:id="@+id/navigation_subheader"
+            android:title="@string/other_options">
+            <menu>
+                android:title="@string/subjects"/>
+                <item
+                    android:id="@+id/menu_opcion_1"
+                    android:icon="@drawable/settings"
+                    android:title="@string/settings" />
+                <item
+                    android:id="@+id/menu_opcion_2"
+                    android:icon="@drawable/info"
+                    android:title="@string/about" />
+            </menu>
+        </item>-->
+    </group>
+</menu>
