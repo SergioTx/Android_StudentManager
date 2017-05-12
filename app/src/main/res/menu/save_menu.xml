@@ -5,5 +5,6 @@
         android:id="@+id/actionbar_save"
         android:title="@string/save"
         app:showAsAction="always"
+        android:icon="@drawable/save"
         android:enabled="true"/>
 </menu>

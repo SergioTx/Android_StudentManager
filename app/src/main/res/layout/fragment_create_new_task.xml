@@ -7,6 +7,7 @@
     android:padding="5dp">
 
     <TextView
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/task_name" />
@@ -18,6 +19,7 @@
         android:layout_marginBottom="10dp" />
 
     <TextView
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/subject" />
@@ -30,26 +32,30 @@
     </Spinner>
 
     <TextView
+        android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/duedate" />
 
-    <DatePicker
-        android:id="@+id/createedittask_pickdate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </DatePicker>
-
     <TextView
+        android:id="@+id/createedittask_duedate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/color" />
+        android:text="@string/today"
+        android:textSize="24sp" />
 
-    <ImageView
-        android:id="@+id/colorpicker"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/task"/>
+    <Button
+        android:id="@+id/launchdatepicker"
+        android:text="@string/pick_new_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <CheckBox
+        android:id="@+id/createedittask_completed"
+        android:text="@string/markcompleted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 
 </LinearLayout>

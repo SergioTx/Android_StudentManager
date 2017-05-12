@@ -1,9 +1,10 @@
 package sergiotx.github.io.clase.beans;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 
-public class Task {
+public class Task implements Serializable {
     private int id;
     private String name;
     private Subject subject;

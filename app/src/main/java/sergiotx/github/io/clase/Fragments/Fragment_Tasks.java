@@ -20,6 +20,7 @@ import sergiotx.github.io.clase.Fragments.subjects.CreateNewSubject;
 import sergiotx.github.io.clase.Fragments.subjects.SubjectAdapter;
 import sergiotx.github.io.clase.Fragments.tasks.CreateNewTask;
 import sergiotx.github.io.clase.Fragments.tasks.TaskAdapter;
+import sergiotx.github.io.clase.Fragments.tasks.TaskDetail;
 import sergiotx.github.io.clase.R;
 import sergiotx.github.io.clase.beans.Subject;
 import sergiotx.github.io.clase.beans.Task;
@@ -61,7 +62,7 @@ public class Fragment_Tasks extends ListFragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CreateNewSubject fragment2 = new CreateNewSubject();
+                CreateNewTask fragment2 = new CreateNewTask();
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.content_frame, fragment2);
@@ -74,11 +75,14 @@ public class Fragment_Tasks extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        Subject s = (Subject) l.getItemAtPosition(position);
 
-        CreateNewTask fragment2 = new CreateNewTask();
+        Log.d("F_Tasks.onListItemClick","Click en la lista!");
+
+        Task t = (Task) l.getItemAtPosition(position);
+
+        TaskDetail fragment2 = new TaskDetail();
         Bundle args = new Bundle();
-        args.putSerializable("subject",s);
+        args.putSerializable("task",t);
         fragment2.setArguments(args);
 
         FragmentManager fragmentManager = getFragmentManager();

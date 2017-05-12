@@ -20,5 +20,10 @@
     <string name="subject">Subject</string>
     <string name="task_name">Name of the task</string>
     <string name="duedate">Due date</string>
+    <string name="pick_new_date">pick new date</string>
+    <string name="markcompleted">Mark as completed</string>
+    <string name="today">Today</string>
+    <string name="delete">delete</string>
+    <string name="edit">edit</string>
 
 </resources>

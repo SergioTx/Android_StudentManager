@@ -53,11 +53,6 @@ public class Subject implements Serializable {
 
     @Override
     public String toString() {
-        return "Subject{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", color=" + color +
-                ", teacher='" + teacher + '\'' +
-                '}';
+        return this.name;
     }
 }

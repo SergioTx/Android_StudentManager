@@ -37,10 +37,10 @@ public class DaoTasks {
             } else {
                 ContentValues values = new ContentValues();
                 values.put(DatabaseContract.Task.COLUMN_NAME, task.getName());
-                values.put(DatabaseContract.Task.COLUMN_SUBJECTID, task.getSubject().getId());
-                values.put(DatabaseContract.Task.COLUMN_DATE, task.getDate().toString()); //FIXME
-                values.put(DatabaseContract.Task.COLUMN_COMPLETED, task.isCompleted());
-                values.put(DatabaseContract.Task.COLUMN_REMINDER, false); //TODO for now, no reminders
+                values.put(DatabaseContract.Task.COLUMN_REMINDER,task.isReminder());
+                values.put(DatabaseContract.Task.COLUMN_SUBJECTID,task.getSubject().getId());
+                values.put(DatabaseContract.Task.COLUMN_COMPLETED,task.isCompleted());
+                values.put(DatabaseContract.Task.COLUMN_DATE,Utils.getStringFromDate(task.getDate()));
 
                 long id = db.insert(DatabaseContract.Task.TABLE_NAME, null, values);
             }
@@ -117,8 +117,8 @@ public class DaoTasks {
     ////////////////////////////////////////////
     // UPDATE
     ////////////////////////////////////////////
-    public boolean updateSubject(Subject subject) {
-        Log.d("updateSubject", "Subject: " + subject.toString());
+    public boolean updateTask(Task task) {
+        Log.d("updateTask", "Task: " + task.toString());
         SQLiteDatabase db = null;
         try {
             this.conn = new SQLiteHelper(context, DatabaseContract.DATABASE_NAME, null, DatabaseContract.DATABASE_VERSION);
@@ -127,11 +127,13 @@ public class DaoTasks {
                 return false;
             } else {
                 ContentValues values = new ContentValues();
-                values.put(DatabaseContract.Subject.COLUMN_NAME, subject.getName());
-                values.put(DatabaseContract.Subject.COLUMN_COLOR, subject.getColor());
-                values.put(DatabaseContract.Subject.COLUMN_TEACHER, subject.getTeacher());
+                values.put(DatabaseContract.Task.COLUMN_NAME, task.getName());
+                values.put(DatabaseContract.Task.COLUMN_REMINDER,task.isReminder());
+                values.put(DatabaseContract.Task.COLUMN_SUBJECTID,task.getSubject().getId());
+                values.put(DatabaseContract.Task.COLUMN_COMPLETED,task.isCompleted());
+                values.put(DatabaseContract.Task.COLUMN_DATE,Utils.getStringFromDate(task.getDate()));
 
-                long id = db.update(DatabaseContract.Subject.TABLE_NAME, values, "_id="+subject.getId(),null);
+                long id = db.update(DatabaseContract.Task.TABLE_NAME, values, "_id="+task.getId(),null);
             }
             return true;
         } finally {
@@ -145,6 +147,31 @@ public class DaoTasks {
     // DELETE
     ////////////////////////////////////////////
 
+    public int deleteTask(Task task) {
+        Log.d("deleteTask", "Task: " + task.toString());
+        SQLiteDatabase db = null;
+        long num = 0;
+        try {
+            this.conn = new SQLiteHelper(context, DatabaseContract.DATABASE_NAME, null, DatabaseContract.DATABASE_VERSION);
+            db = conn.getWritableDatabase();
+            if (db == null) {
+                return -1;
+            } else {
+                ContentValues values = new ContentValues();
+                values.put(DatabaseContract.Task.COLUMN_NAME, task.getName());
+                values.put(DatabaseContract.Task.COLUMN_REMINDER,task.isReminder());
+                values.put(DatabaseContract.Task.COLUMN_SUBJECTID,task.getSubject().getId());
+                values.put(DatabaseContract.Task.COLUMN_COMPLETED,task.isCompleted());
+                values.put(DatabaseContract.Task.COLUMN_DATE,Utils.getStringFromDate(task.getDate()));
 
+                num = db.delete(DatabaseContract.Task.TABLE_NAME, "_id="+task.getId(),null);
+            }
+            return (int)num;
+        } finally {
+            if (db != null) {
+                db.close();
+            }
+        }
+    }
 
 }
