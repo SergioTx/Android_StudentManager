@@ -5,7 +5,7 @@ import android.provider.BaseColumns;
 
 public final class DatabaseContract {
     public static final String DATABASE_NAME = "database.db";
-    public static final int DATABASE_VERSION = 11;
+    public static final int DATABASE_VERSION = 18;
 
     private static final String TEXT_TYPE = " TEXT";
     private static final String INT_TYPE = " INTEGER";
@@ -119,13 +119,15 @@ public final class DatabaseContract {
         public static final String DELETE_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
     }
 
-    //Day is 1-7 (day of the week)
+    //Day is 0-6 (day of the week)
     public static abstract class Timetable implements BaseColumns {
         public static final String TABLE_NAME = "TIMETABLE";
         public static final String COLUMN_SUBJECTID = "SUBJECTID";
         public static final String COLUMN_DAY = "DAY";
         public static final String COLUMN_STARTHOUR = "STARTHOUR";
         public static final String COLUMN_ENDHOUR = "ENDHOUR";
+
+        public static final int[] TIMETABLE_TIMES = {800, 900, 1000, 1130, 1230, 1330};
 
 
         public static final String CREATE_TABLE = "CREATE TABLE " +
@@ -138,5 +140,17 @@ public final class DatabaseContract {
                 FOREIGN_KEY + "(" + COLUMN_SUBJECTID + ")" + REFERENCES + Subject.TABLE_NAME + "(" + Subject._ID + ") )";
 
         public static final String DELETE_TABLE = "DROP TABLE IF EXISTS " + TABLE_NAME;
+
+        public static final String SQL_GET_ALL_FIELDS = "SELECT " + _ID + COMMA_SEP + COLUMN_DAY + COMMA_SEP + COLUMN_SUBJECTID + COMMA_SEP + COLUMN_STARTHOUR + COMMA_SEP + COLUMN_ENDHOUR + " FROM " + TABLE_NAME;
+
+        public static final int getHourIndex(int hour) {
+            int index = -1;
+            for (int i = 0; i < TIMETABLE_TIMES.length && index < 0; i++) {
+                if (TIMETABLE_TIMES[i] == hour){
+                    index = i;
+                }
+            }
+            return index;
+        }
     }
 }

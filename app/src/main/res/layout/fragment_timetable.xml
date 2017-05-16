@@ -6,62 +6,40 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:stretchColumns="*"> <!-- stretch all columns -->
 
         <TableRow>
-
-            <TextView
-                android:layout_column="1"
-                android:text="Lunes" />
-
-            <TextView android:text="Martes" />
-
-            <TextView android:text="Miércoles" />
-
-            <TextView android:text="Jueves" />
-
-            <TextView android:text="Viernes" />
+            <TextView android:text="" />
+            <TextView android:text="@string/monday" />
+            <TextView android:text="@string/tuesday" />
+            <TextView android:text="@string/wednesday" />
+            <TextView android:text="@string/thursday" />
+            <TextView android:text="@string/friday" />
         </TableRow>
 
         <TableRow android:minHeight="30dp">
-
             <TextView android:text="8:00 - 9:00" />
 
             <TextView
                 android:id="@+id/monday800"
-                android:layout_height="match_parent"
-                android:background="@color/md_grey_700"
-                android:text="EIE"
-                android:textColor="@color/md_white_1000" />
+                android:layout_height="match_parent" />
 
             <TextView
                 android:id="@+id/tuesday800"
-                android:layout_height="match_parent"
-                android:background="@color/md_green_300"
-                android:text="PROM"
-                android:textColor="@color/md_green_900" />
+                android:layout_height="match_parent" />
 
             <TextView
                 android:id="@+id/wednesday800"
-                android:layout_height="match_parent"
-                android:background="@color/md_green_300"
-                android:text="PROM"
-                android:textColor="@color/md_green_900" />
+                android:layout_height="match_parent" />
 
             <TextView
                 android:id="@+id/thursday800"
-                android:layout_height="match_parent"
-                android:background="@color/md_pink_300"
-                android:text="SIGE"
-                android:textColor="@color/md_pink_900" />
+                android:layout_height="match_parent" />
 
             <TextView
                 android:id="@+id/friday800"
-                android:layout_height="match_parent"
-                android:background="@color/md_pink_300"
-                android:text="SIGE"
-                android:textColor="@color/md_pink_900" />
+                android:layout_height="match_parent" />
         </TableRow>
 
         <TableRow android:minHeight="30dp">
@@ -69,34 +47,24 @@
             <TextView android:text="9:00 - 10:00" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_pink_300"
-                android:text="SIGE"
-                android:textColor="@color/md_pink_900" />
+                android:id="@+id/monday900"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_green_300"
-                android:text=""
-                android:textColor="@color/md_green_900" />
+                android:id="@+id/tuesday900"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_green_300"
-                android:text=""
-                android:textColor="@color/md_green_900" />
+                android:id="@+id/wednesday900"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_yellow_300"
-                android:text="PROS"
-                android:textColor="@color/md_yellow_900" />
+                android:id="@+id/thursday900"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_blue_300"
-                android:text="ADAT"
-                android:textColor="@color/md_blue_900" />
+                android:id="@+id/friday900"
+                android:layout_height="match_parent" />
         </TableRow>
 
         <TableRow android:minHeight="30dp">
@@ -104,34 +72,24 @@
             <TextView android:text="10:00 - 11:00" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_pink_300"
-                android:text=""
-                android:textColor="@color/md_pink_900" />
+                android:id="@+id/monday1000"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_orange_300"
-                android:text="DEIN"
-                android:textColor="@color/md_orange_900" />
+                android:id="@+id/tuesday1000"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_pink_300"
-                android:text="SIGE"
-                android:textColor="@color/md_pink_900" />
+                android:id="@+id/wednesday1000"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_yellow_300"
-                android:text=""
-                android:textColor="@color/md_yellow_900" />
+                android:id="@+id/thursday1000"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_blue_300"
-                android:text=""
-                android:textColor="@color/md_blue_900" />
+                android:id="@+id/friday1000"
+                android:layout_height="match_parent" />
         </TableRow>
 
         <TableRow>
@@ -147,109 +105,79 @@
                 android:textAlignment="center" />
         </TableRow>
 
-        <TableRow>
+        <TableRow android:minHeight="30dp">
 
             <TextView android:text="11:30 - 12:30" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_green_300"
-                android:text="PROM"
-                android:textColor="@color/md_green_900" />
+                android:id="@+id/monday1130"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_orange_300"
-                android:text="DEIN"
-                android:textColor="@color/md_orange_900" />
+                android:id="@+id/tuesday1130"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_blue_300"
-                android:text="ADAT"
-                android:textColor="@color/md_blue_900" />
+                android:id="@+id/wednesday1130"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_grey_700"
-                android:text="EIE"
-                android:textColor="@color/md_white_1000" />
+                android:id="@+id/thursday1130"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_orange_300"
-                android:text="DEIN"
-                android:textColor="@color/md_orange_900" />
+                android:id="@+id/friday1130"
+                android:layout_height="match_parent" />
         </TableRow>
 
-        <TableRow>
+        <TableRow android:minHeight="30dp">
 
             <TextView android:text="12:30 - 13:30" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_yellow_300"
-                android:text="PROS"
-                android:textColor="@color/md_yellow_900" />
+                android:id="@+id/monday1230"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_blue_300"
-                android:text="ADAT"
-                android:textColor="@color/md_blue_900" />
+                android:id="@+id/tuesday1230"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_blue_300"
-                android:text=""
-                android:textColor="@color/md_blue_900" />
+                android:id="@+id/wednesday1230"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_orange_300"
-                android:text="DEIN"
-                android:textColor="@color/md_orange_900" />
+                android:id="@+id/thursday1230"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_orange_300"
-                android:text=""
-                android:textColor="@color/md_orange_900" />
+                android:id="@+id/friday1230"
+                android:layout_height="match_parent" />
         </TableRow>
 
-        <TableRow>
+        <TableRow android:minHeight="30dp">
 
             <TextView android:text="13:30 - 14:30" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_yellow_300"
-                android:text=""
-                android:textColor="@color/md_yellow_900" />
+                android:id="@+id/monday1330"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_blue_300"
-                android:text=""
-                android:textColor="@color/md_blue_900" />
+                android:id="@+id/tuesday1330"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_grey_700"
-                android:text="EIE"
-                android:textColor="@color/md_white_1000" />
+                android:id="@+id/wednesday1330"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_orange_300"
-                android:text=""
-                android:textColor="@color/md_orange_900" />
+                android:id="@+id/thursday1330"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_height="match_parent"
-                android:background="@color/md_orange_300"
-                android:text=""
-                android:textColor="@color/md_orange_900" />
+                android:id="@+id/friday1330"
+                android:layout_height="match_parent" />
         </TableRow>
 
     </TableLayout>

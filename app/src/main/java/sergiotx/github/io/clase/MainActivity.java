@@ -66,12 +66,12 @@ public class MainActivity extends AppCompatActivity {
                                 fragmentTransaction = true;
                                 setchecked = true;
                                 break;
-                            case R.id.navigation_exams:
+                            /*case R.id.navigation_exams:
                                 fragment = new Fragment_Exams();
                                 fragmentTransaction = true;
                                 setchecked = true;
                                 break;
-                            /*case R.id.navigation_calendar:
+                            case R.id.navigation_calendar:
                                 fragment = new Fragment_Calendar();
                                 fragmentTransaction = true;
                                 setchecked = true;

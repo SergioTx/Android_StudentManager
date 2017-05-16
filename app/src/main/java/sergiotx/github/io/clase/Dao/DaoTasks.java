@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import sergiotx.github.io.clase.beans.Subject;
 import sergiotx.github.io.clase.beans.Task;
@@ -40,7 +39,7 @@ public class DaoTasks {
                 values.put(DatabaseContract.Task.COLUMN_REMINDER,task.isReminder());
                 values.put(DatabaseContract.Task.COLUMN_SUBJECTID,task.getSubject().getId());
                 values.put(DatabaseContract.Task.COLUMN_COMPLETED,task.isCompleted());
-                values.put(DatabaseContract.Task.COLUMN_DATE,Utils.getStringFromDate(task.getDate()));
+                values.put(DatabaseContract.Task.COLUMN_DATE, DateUtils.getStringFromDate(task.getDate()));
 
                 long id = db.insert(DatabaseContract.Task.TABLE_NAME, null, values);
             }
@@ -78,7 +77,7 @@ public class DaoTasks {
                     Task t = new Task();
                     t.setId(c.getInt(col_id));
                     t.setName(c.getString(col_name));
-                    t.setDate(Utils.dateFromString(c.getString(col_date)));
+                    t.setDate(DateUtils.dateFromString(c.getString(col_date)));
                     t.setCompleted(c.getInt(col_completed) > 0); //zero or one
                     t.setReminder(c.getInt(col_reminder) > 0); //zero or one
                     t.setSubject(getSubjectById(c.getInt(col_subjectid),db));
@@ -131,7 +130,7 @@ public class DaoTasks {
                 values.put(DatabaseContract.Task.COLUMN_REMINDER,task.isReminder());
                 values.put(DatabaseContract.Task.COLUMN_SUBJECTID,task.getSubject().getId());
                 values.put(DatabaseContract.Task.COLUMN_COMPLETED,task.isCompleted());
-                values.put(DatabaseContract.Task.COLUMN_DATE,Utils.getStringFromDate(task.getDate()));
+                values.put(DatabaseContract.Task.COLUMN_DATE, DateUtils.getStringFromDate(task.getDate()));
 
                 long id = db.update(DatabaseContract.Task.TABLE_NAME, values, "_id="+task.getId(),null);
             }
@@ -184,7 +183,7 @@ public class DaoTasks {
                 values.put(DatabaseContract.Task.COLUMN_REMINDER,task.isReminder());
                 values.put(DatabaseContract.Task.COLUMN_SUBJECTID,task.getSubject().getId());
                 values.put(DatabaseContract.Task.COLUMN_COMPLETED,task.isCompleted());
-                values.put(DatabaseContract.Task.COLUMN_DATE,Utils.getStringFromDate(task.getDate()));
+                values.put(DatabaseContract.Task.COLUMN_DATE, DateUtils.getStringFromDate(task.getDate()));
 
                 num = db.delete(DatabaseContract.Task.TABLE_NAME, "_id="+task.getId(),null);
             }

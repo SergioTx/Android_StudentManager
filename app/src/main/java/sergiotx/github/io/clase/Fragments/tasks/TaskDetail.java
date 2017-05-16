@@ -1,8 +1,6 @@
 package sergiotx.github.io.clase.Fragments.tasks;
 
-import android.content.Context;
 import android.content.DialogInterface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,28 +13,16 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-
-import sergiotx.github.io.clase.Dao.DaoSubjects;
 import sergiotx.github.io.clase.Dao.DaoTasks;
-import sergiotx.github.io.clase.Dao.Utils;
+import sergiotx.github.io.clase.Dao.DateUtils;
 import sergiotx.github.io.clase.Fragments.Fragment_Tasks;
-import sergiotx.github.io.clase.Fragments.subjects.CreateNewSubject;
-import sergiotx.github.io.clase.Fragments.subjects.SubjectAdapter;
 import sergiotx.github.io.clase.R;
-import sergiotx.github.io.clase.beans.Subject;
 import sergiotx.github.io.clase.beans.Task;
 
 public class TaskDetail extends Fragment {
@@ -108,7 +94,7 @@ public class TaskDetail extends Fragment {
             img.setColorFilter(this.task.getSubject().getColor());
             name.setText(String.valueOf(this.task.getName()));
             name.setTextColor(this.task.getSubject().getColor());
-            duedate.setText(String.valueOf(Utils.getBeautyString(this.task.getDate(), getContext())));
+            duedate.setText(String.valueOf(DateUtils.getBeautyString(this.task.getDate(), getContext())));
             completed.setChecked(this.task.isCompleted());
         } else {
             Toast.makeText(getContext(), "ERROR", Toast.LENGTH_SHORT).show();
@@ -150,8 +136,15 @@ public class TaskDetail extends Fragment {
     }
 
     private void editTask() {
-        //TODO do sth
-        Toast.makeText(getContext(), "EDIT click", Toast.LENGTH_SHORT).show();
+        CreateNewTask fragment2 = new CreateNewTask();
+        Bundle args = new Bundle();
+        args.putSerializable("task",task);
+        fragment2.setArguments(args);
+        FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.content_frame, fragment2);
+        fragmentTransaction.addToBackStack("tag"); //back button handle
+        fragmentTransaction.commit();
     }
 
 }

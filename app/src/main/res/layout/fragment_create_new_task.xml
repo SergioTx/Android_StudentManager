@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="sergiotx.github.io.clase.Fragments.subjects.CreateNewSubject"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:weightSum="1">
 
     <TextView
         android:textStyle="bold"
@@ -27,7 +28,8 @@
     <Spinner
         android:id="@+id/createedittask_picksubject"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05">
 
     </Spinner>
 

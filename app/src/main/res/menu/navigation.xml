@@ -19,13 +19,13 @@
             android:icon="@drawable/timetable"
             android:title="@string/title_timetable" />
 
-        <item
+        <!--<item
             android:id="@+id/navigation_exams"
             android:enabled="true"
             android:icon="@drawable/exam"
             android:title="@string/title_exams" />
 
-        <!--<item
+        <item
             android:id="@+id/navigation_calendar"
             android:enabled="true"
             android:icon="@drawable/calendar"

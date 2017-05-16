@@ -28,8 +28,7 @@ import java.util.GregorianCalendar;
 
 import sergiotx.github.io.clase.Dao.DaoSubjects;
 import sergiotx.github.io.clase.Dao.DaoTasks;
-import sergiotx.github.io.clase.Dao.Utils;
-import sergiotx.github.io.clase.Fragments.Fragment_Subjects;
+import sergiotx.github.io.clase.Dao.DateUtils;
 import sergiotx.github.io.clase.Fragments.Fragment_Tasks;
 import sergiotx.github.io.clase.Fragments.subjects.SubjectAdapter;
 import sergiotx.github.io.clase.R;
@@ -124,7 +123,7 @@ public class CreateNewTask extends Fragment {
 
                         //long time = calendar.getTimeInMillis();
                         task.setDate(calendar.getTime());
-                        date.setText(String.valueOf(Utils.getBeautyString(task.getDate(),getContext())));
+                        date.setText(String.valueOf(DateUtils.getBeautyString(task.getDate(),getContext())));
                         alertDialog.dismiss();
                     }});
                 alertDialog.setView(dialogView);
@@ -164,7 +163,7 @@ public class CreateNewTask extends Fragment {
                 task = tsk;
                 this.name.setText(String.valueOf(task.getName()));
                 this.checkbox_completed.setChecked(task.isCompleted());
-                this.date.setText(String.valueOf(Utils.getBeautyString(task.getDate(),getContext())));
+                this.date.setText(String.valueOf(DateUtils.getBeautyString(task.getDate(),getContext())));
                 this.spinner_subject.setSelection(subjectsList.indexOf(task.getSubject()));
             }
         }

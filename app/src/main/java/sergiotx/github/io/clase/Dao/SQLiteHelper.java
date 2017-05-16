@@ -8,6 +8,7 @@ import android.util.Log;
 
 import sergiotx.github.io.clase.R;
 import sergiotx.github.io.clase.beans.Subject;
+import sergiotx.github.io.clase.beans.Timetable;
 
 public class SQLiteHelper extends SQLiteOpenHelper {
 
@@ -59,13 +60,12 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     private void addDemoData(SQLiteDatabase db) {
         int j = 0;
         Subject[] subjects = {
-                new Subject(j++,"Demo Subject 1","Demo teacher", R.color.subject_amber),
-                new Subject(j++,"Demo Subject 2","Demo teacher",R.color.subject_blue),
-                new Subject(j++,"Demo Subject 3","Demo teacher",R.color.subject_bluegrey),
-                new Subject(j++,"Demo Subject 4","Demo teacher",R.color.subject_brown),
-                new Subject(j++,"Demo Subject 5","Demo teacher",R.color.subject_red),
-                new Subject(j++,"Demo Subject 6","Demo teacher",R.color.subject_green),
-                new Subject(j++,"Demo Subject 7","Demo teacher",R.color.subject_deeppurple)
+                new Subject(j++, "EIE", "Demo teacher", R.color.subject_amber),
+                new Subject(j++, "SIGE", "Demo teacher", R.color.subject_blue),
+                new Subject(j++, "DEIN", "Demo teacher", R.color.subject_bluegrey),
+                new Subject(j++, "PROS", "Demo teacher", R.color.subject_brown),
+                new Subject(j++, "ADAT", "Demo teacher", R.color.subject_red),
+                new Subject(j++, "PROM", "Demo teacher", R.color.subject_green),
         };
 
         ContentValues content = null;
@@ -76,10 +76,69 @@ public class SQLiteHelper extends SQLiteOpenHelper {
             content.put(DatabaseContract.Subject.COLUMN_COLOR, subjects[i].getColor());
             content.put(DatabaseContract.Subject.COLUMN_TEACHER, subjects[i].getTeacher());
 
-            Log.d("addDemoData",subjects[i].getName());
-
+            Log.d("addDemoData", subjects[i].getName());
 
             db.insert(DatabaseContract.Subject.TABLE_NAME, null, content);
         }
+
+
+        //TODO FIXME those subjects have no ID
+        j = 0;
+        Timetable[][] timetables = {
+            {
+                    new Timetable(j++, subjects[1], 0, 800, 900),
+                    new Timetable(j++, subjects[0], 0, 900, 1000),
+                    new Timetable(j++, subjects[2], 0, 1000, 1100),
+                    new Timetable(j++, subjects[3], 0, 1130, 1230),
+                    new Timetable(j++, subjects[0], 0, 1230, 1330),
+                    new Timetable(j++, subjects[3], 0, 1330, 1430)
+            }, {
+                    new Timetable(j++, subjects[1], 1, 800, 900),
+                    new Timetable(j++, subjects[0], 1, 900, 1000),
+                    new Timetable(j++, subjects[4], 1, 1000, 1100),
+                    new Timetable(j++, subjects[5], 1, 1130, 1230),
+                    new Timetable(j++, subjects[4], 1, 1230, 1330),
+                    new Timetable(j++, subjects[0], 1, 1330, 1430)
+            }, {
+                    new Timetable(j++, subjects[1], 2, 800, 900),
+                    new Timetable(j++, subjects[2], 2, 900, 1000),
+                    new Timetable(j++, subjects[3], 2, 1000, 1100),
+                    new Timetable(j++, subjects[4], 2, 1130, 1230),
+                    new Timetable(j++, subjects[5], 2, 1230, 1330),
+                    new Timetable(j++, subjects[0], 2, 1330, 1430)
+            }, {
+                    new Timetable(j++, subjects[0], 3, 800, 900),
+                    new Timetable(j++, subjects[2], 3, 900, 1000),
+                    new Timetable(j++, subjects[3], 3, 1000, 1100),
+                    new Timetable(j++, subjects[4], 3, 1130, 1230),
+                    new Timetable(j++, subjects[5], 3, 1230, 1330),
+                    new Timetable(j++, subjects[1], 3, 1330, 1430)
+            }, {
+                    new Timetable(j++, subjects[1], 4, 800, 900),
+                    new Timetable(j++, subjects[3], 4, 900, 1000),
+                    new Timetable(j++, subjects[4], 4, 1000, 1100),
+                    new Timetable(j++, subjects[0], 4, 1130, 1230),
+                    new Timetable(j++, subjects[5], 4, 1230, 1330),
+                    new Timetable(j++, subjects[0], 4, 1330, 1430)
+            }
+        };
+
+        for (int i = 0; i < timetables.length; i++) {
+            for (int k = 0; k < timetables[i].length; k++) {
+                content = new ContentValues();
+                content.put(DatabaseContract.Timetable.COLUMN_SUBJECTID, timetables[i][k].getSubject().getId());
+                content.put(DatabaseContract.Timetable.COLUMN_DAY, timetables[i][k].getDay());
+                content.put(DatabaseContract.Timetable.COLUMN_STARTHOUR, timetables[i][k].getStartHour());
+                content.put(DatabaseContract.Timetable.COLUMN_ENDHOUR, timetables[i][k].getEndHour());
+
+                /*Log.d("addDemoData", "DAY: " + i);
+                Log.d("addDemoData", "HOUR: " + timetables[i][k].getStartHour());
+                Log.d("addDemoData", timetables[i][k].getSubject().getName());*/
+
+                db.insert(DatabaseContract.Timetable.TABLE_NAME, null, content);
+            }
+        }
+
+
     }
 }

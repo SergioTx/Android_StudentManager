@@ -15,7 +15,7 @@ import sergiotx.github.io.clase.R;
  * Created by SergioTx on 11/05/2017.
  */
 
-public class Utils {
+public class DateUtils {
 
     public static Date dateFromString(String dtStart){
         Date date = null;
@@ -24,7 +24,7 @@ public class Utils {
             date = format.parse(dtStart);
             System.out.println(date);
         } catch (ParseException e) {
-            Log.d("Utils.dateFromString","ParseException - " + e);
+            Log.d("DateUtils.dateFromString","ParseException - " + e);
         }
         return date;
     }

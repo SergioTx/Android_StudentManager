@@ -2,25 +2,17 @@ package sergiotx.github.io.clase.Fragments.tasks;
 
 import android.content.Context;
 import android.graphics.Paint;
-import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Date;
 
-import sergiotx.github.io.clase.Dao.Utils;
-import sergiotx.github.io.clase.Fragments.Fragment_Tasks;
+import sergiotx.github.io.clase.Dao.DateUtils;
 import sergiotx.github.io.clase.R;
-import sergiotx.github.io.clase.beans.Subject;
 import sergiotx.github.io.clase.beans.Task;
 
 public class TaskAdapter extends ArrayAdapter<Task> {
@@ -41,7 +33,7 @@ public class TaskAdapter extends ArrayAdapter<Task> {
         TextView date = (TextView) item.findViewById(R.id.list_task_date);
 
         name.setText(String.valueOf(tasks[position].getName()));
-        date.setText(String.valueOf(Utils.getBeautyString(tasks[position].getDate(),getContext())));
+        date.setText(String.valueOf(DateUtils.getBeautyString(tasks[position].getDate(),getContext())));
 
         ImageView  img = (ImageView) item.findViewById(R.id.list_task_img);
         img.setColorFilter(tasks[position].getSubject().getColor());
