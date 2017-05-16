@@ -4,10 +4,254 @@
     android:layout_height="match_parent"
     tools:context="sergiotx.github.io.clase.Fragments.Fragment_Timetable">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/title_timetable" />
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"> <!-- stretch all columns -->
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:text="Lunes" />
+
+            <TextView android:text="Martes" />
+
+            <TextView android:text="Miércoles" />
+
+            <TextView android:text="Jueves" />
+
+            <TextView android:text="Viernes" />
+        </TableRow>
+
+        <TableRow android:minHeight="30dp">
+
+            <TextView android:text="8:00 - 9:00" />
+
+            <TextView
+                android:id="@+id/monday800"
+                android:layout_height="match_parent"
+                android:background="@color/md_grey_700"
+                android:text="EIE"
+                android:textColor="@color/md_white_1000" />
+
+            <TextView
+                android:id="@+id/tuesday800"
+                android:layout_height="match_parent"
+                android:background="@color/md_green_300"
+                android:text="PROM"
+                android:textColor="@color/md_green_900" />
+
+            <TextView
+                android:id="@+id/wednesday800"
+                android:layout_height="match_parent"
+                android:background="@color/md_green_300"
+                android:text="PROM"
+                android:textColor="@color/md_green_900" />
+
+            <TextView
+                android:id="@+id/thursday800"
+                android:layout_height="match_parent"
+                android:background="@color/md_pink_300"
+                android:text="SIGE"
+                android:textColor="@color/md_pink_900" />
+
+            <TextView
+                android:id="@+id/friday800"
+                android:layout_height="match_parent"
+                android:background="@color/md_pink_300"
+                android:text="SIGE"
+                android:textColor="@color/md_pink_900" />
+        </TableRow>
+
+        <TableRow android:minHeight="30dp">
+
+            <TextView android:text="9:00 - 10:00" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_pink_300"
+                android:text="SIGE"
+                android:textColor="@color/md_pink_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_green_300"
+                android:text=""
+                android:textColor="@color/md_green_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_green_300"
+                android:text=""
+                android:textColor="@color/md_green_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_yellow_300"
+                android:text="PROS"
+                android:textColor="@color/md_yellow_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_blue_300"
+                android:text="ADAT"
+                android:textColor="@color/md_blue_900" />
+        </TableRow>
+
+        <TableRow android:minHeight="30dp">
+
+            <TextView android:text="10:00 - 11:00" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_pink_300"
+                android:text=""
+                android:textColor="@color/md_pink_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_orange_300"
+                android:text="DEIN"
+                android:textColor="@color/md_orange_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_pink_300"
+                android:text="SIGE"
+                android:textColor="@color/md_pink_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_yellow_300"
+                android:text=""
+                android:textColor="@color/md_yellow_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_blue_300"
+                android:text=""
+                android:textColor="@color/md_blue_900" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:background="@color/md_grey_500"
+                android:text="11:00 - 11:30" />
+
+            <TextView
+                android:layout_span="5"
+                android:background="@color/md_grey_500"
+                android:text="RECREO"
+                android:textAlignment="center" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:text="11:30 - 12:30" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_green_300"
+                android:text="PROM"
+                android:textColor="@color/md_green_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_orange_300"
+                android:text="DEIN"
+                android:textColor="@color/md_orange_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_blue_300"
+                android:text="ADAT"
+                android:textColor="@color/md_blue_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_grey_700"
+                android:text="EIE"
+                android:textColor="@color/md_white_1000" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_orange_300"
+                android:text="DEIN"
+                android:textColor="@color/md_orange_900" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:text="12:30 - 13:30" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_yellow_300"
+                android:text="PROS"
+                android:textColor="@color/md_yellow_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_blue_300"
+                android:text="ADAT"
+                android:textColor="@color/md_blue_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_blue_300"
+                android:text=""
+                android:textColor="@color/md_blue_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_orange_300"
+                android:text="DEIN"
+                android:textColor="@color/md_orange_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_orange_300"
+                android:text=""
+                android:textColor="@color/md_orange_900" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView android:text="13:30 - 14:30" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_yellow_300"
+                android:text=""
+                android:textColor="@color/md_yellow_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_blue_300"
+                android:text=""
+                android:textColor="@color/md_blue_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_grey_700"
+                android:text="EIE"
+                android:textColor="@color/md_white_1000" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_orange_300"
+                android:text=""
+                android:textColor="@color/md_orange_900" />
+
+            <TextView
+                android:layout_height="match_parent"
+                android:background="@color/md_orange_300"
+                android:text=""
+                android:textColor="@color/md_orange_900" />
+        </TableRow>
+
+    </TableLayout>
 
 </FrameLayout>
