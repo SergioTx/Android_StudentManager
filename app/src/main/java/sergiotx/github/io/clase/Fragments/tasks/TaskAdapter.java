@@ -1,6 +1,7 @@
 package sergiotx.github.io.clase.Fragments.tasks;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -14,6 +15,9 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Date;
+
+import sergiotx.github.io.clase.Dao.Utils;
 import sergiotx.github.io.clase.Fragments.Fragment_Tasks;
 import sergiotx.github.io.clase.R;
 import sergiotx.github.io.clase.beans.Subject;
@@ -35,16 +39,19 @@ public class TaskAdapter extends ArrayAdapter<Task> {
 
         TextView name = (TextView) item.findViewById(R.id.list_task_name);
         TextView date = (TextView) item.findViewById(R.id.list_task_date);
-        //CheckBox check = (CheckBox) item.findViewById(R.id.list_task_check);
 
         name.setText(String.valueOf(tasks[position].getName()));
-        date.setText(String.valueOf(tasks[position].getDate())); //TODO formatear la fecha para que día en X días, darle colores si ha pasado...
-        //check.setChecked(tasks[position].isCompleted());
+        date.setText(String.valueOf(Utils.getBeautyString(tasks[position].getDate(),getContext())));
 
         ImageView  img = (ImageView) item.findViewById(R.id.list_task_img);
         img.setColorFilter(tasks[position].getSubject().getColor());
 
-
+        Date today = new Date();
+        if (tasks[position].isCompleted()) {
+            name.setPaintFlags(name.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        } else if (tasks[position].getDate().getTime() < today.getTime()){
+            date.setTextColor(parent.getRootView().getResources().getColor(R.color.subject_red));
+        }
 
         return(item);
     }

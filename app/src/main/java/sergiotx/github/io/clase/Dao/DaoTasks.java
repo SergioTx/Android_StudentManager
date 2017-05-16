@@ -143,6 +143,28 @@ public class DaoTasks {
         }
     }
 
+    public boolean updateChecked(Task task) {
+        Log.d("updateTask", "Task: " + task.toString());
+        SQLiteDatabase db = null;
+        try {
+            this.conn = new SQLiteHelper(context, DatabaseContract.DATABASE_NAME, null, DatabaseContract.DATABASE_VERSION);
+            db = conn.getWritableDatabase();
+            if (db == null) {
+                return false;
+            } else {
+                ContentValues values = new ContentValues();
+                values.put(DatabaseContract.Task.COLUMN_COMPLETED,task.isCompleted());
+
+                long id = db.update(DatabaseContract.Task.TABLE_NAME, values, "_id="+task.getId(),null);
+            }
+            return true;
+        } finally {
+            if (db != null) {
+                db.close();
+            }
+        }
+    }
+
     ////////////////////////////////////////////
     // DELETE
     ////////////////////////////////////////////
