@@ -6,10 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import java.util.ArrayList;
-
 import sergiotx.github.io.clase.beans.Subject;
-import sergiotx.github.io.clase.beans.Task;
 import sergiotx.github.io.clase.beans.Timetable;
 
 public class DaoTimetable {
@@ -49,15 +46,16 @@ public class DaoTimetable {
 
                 while (c.moveToNext()) {
                     Timetable t = new Timetable();
+                    t.setId(col_id);
                     t.setDay(c.getInt(col_day));
-                    t.setSubject(getSubjectById(c.getInt(col_subjectid),db));
+                    t.setSubject(getSubjectById(c.getInt(col_subjectid), db));
                     t.setStartHour(c.getInt(col_starthour));
                     t.setEndHour(c.getInt(col_endhour));
 
-                    Log.d("getTimetable",t.toString());
+                    Log.d("getTimetable", t.toString());
 
                     int hour = DatabaseContract.Timetable.getHourIndex(t.getStartHour());
-                    Log.d("getTimetable","HOUR: " + hour);
+                    Log.d("getTimetable", "HOUR: " + hour);
 
                     timetable[t.getDay()][hour] = t;
                 }
@@ -72,7 +70,7 @@ public class DaoTimetable {
     }
 
     //PRIVATE: only internal use -> no closing of DB
-    private Subject getSubjectById(int id, SQLiteDatabase db){
+    private Subject getSubjectById(int id, SQLiteDatabase db) {
         Subject subject = null;
 
         String sql = DatabaseContract.Subject.SQL_GET_ALL_FIELDS + " where _id = " + id;
@@ -102,9 +100,12 @@ public class DaoTimetable {
                 return false;
             } else {
                 ContentValues values = new ContentValues();
-                values.put(DatabaseContract.Timetable.COLUMN_SUBJECTID, timetable.getSubject().getId());
+                if (timetable.getSubject() != null)
+                    values.put(DatabaseContract.Timetable.COLUMN_SUBJECTID, timetable.getSubject().getId());
+                else
+                    values.put(DatabaseContract.Timetable.COLUMN_SUBJECTID, -1);
 
-                long id = db.update(DatabaseContract.Timetable.TABLE_NAME, values, "_id="+timetable.getId(),null);
+                long id = db.update(DatabaseContract.Timetable.TABLE_NAME, values, DatabaseContract.Timetable.COLUMN_DAY + "=" + timetable.getDay() + " AND " + DatabaseContract.Timetable.COLUMN_STARTHOUR + "=" + timetable.getStartHour(), null);
             }
             return true;
         } finally {

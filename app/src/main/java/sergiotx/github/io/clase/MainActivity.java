@@ -7,7 +7,6 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 
 import sergiotx.github.io.clase.Fragments.Fragment_Assistance;
@@ -37,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.hamburguer_menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //set default fragment (probably not the best way) //FIXME
+        //set default fragment (probably not the best way)
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.content_frame, new Fragment_Timetable())
                 .commit();
@@ -51,11 +50,11 @@ public class MainActivity extends AppCompatActivity {
                         Fragment fragment = null;
                         boolean setchecked = false;
                         switch (menuItem.getItemId()) {
-                            /*case R.id.navigation_assistance:
+                            case R.id.navigation_assistance:
                                 fragment = new Fragment_Assistance();
                                 fragmentTransaction = true;
                                 setchecked = true;
-                                break;*/
+                                break;
                             case R.id.navigation_tasks:
                                 fragment = new Fragment_Tasks();
                                 fragmentTransaction = true;
@@ -66,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                                 fragmentTransaction = true;
                                 setchecked = true;
                                 break;
-                            /*case R.id.navigation_exams:
+                            case R.id.navigation_exams:
                                 fragment = new Fragment_Exams();
                                 fragmentTransaction = true;
                                 setchecked = true;
@@ -75,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                                 fragment = new Fragment_Calendar();
                                 fragmentTransaction = true;
                                 setchecked = true;
-                                break;*/
+                                break;
                             case R.id.navigation_subjects:
                                 fragment = new Fragment_Subjects();
                                 fragmentTransaction = true;

@@ -131,9 +131,10 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 content.put(DatabaseContract.Timetable.COLUMN_STARTHOUR, timetables[i][k].getStartHour());
                 content.put(DatabaseContract.Timetable.COLUMN_ENDHOUR, timetables[i][k].getEndHour());
 
-                /*Log.d("addDemoData", "DAY: " + i);
+                Log.d("addDemoData", "DAY: " + i);
                 Log.d("addDemoData", "HOUR: " + timetables[i][k].getStartHour());
-                Log.d("addDemoData", timetables[i][k].getSubject().getName());*/
+                Log.d("addDemoData", "SUBJECT: " + timetables[i][k].getSubject().getName());
+                Log.d("addDemoData", "TIMETABLE: " + timetables[i][k].toString());
 
                 db.insert(DatabaseContract.Timetable.TABLE_NAME, null, content);
             }

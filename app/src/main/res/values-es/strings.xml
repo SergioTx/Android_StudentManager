@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Agenda Escolar</string>
+    <string name="about">Sobre nosotros</string>
+    <string name="cancel">Cancelar</string>
+    <string name="choose_new_subject">Elige una nueva asignatura para esta hora</string>
+    <string name="color">Color</string>
+    <string name="completed">Completado</string>
+    <string name="delete">Borrar</string>
+    <string name="delete_prompt">¿Realmente quieres borrar esta tarea?</string>
+    <string name="duedate">Fecha de entrega</string>
+    <string name="edit">editar</string>
+    <string name="free">Libre</string>
+    <string name="friday">Viernes</string>
+    <string name="markcompleted">Marcar como completado</string>
+    <string name="monday">Lunes</string>
+    <string name="ok">OK</string>
+    <string name="other_options">Otras opciones</string>
+    <string name="pick_new_date">Elegir nueva fecha</string>
+    <string name="save">Guardar</string>
+    <string name="settings">Ajustes</string>
+    <string name="subject">Asignatura</string>
+    <string name="subject_name">Nombre de la asignatura</string>
+    <string name="subjects">Asignaturas</string>
+    <string name="task_deleted">Tarea borrada con éxito</string>
+    <string name="task_name">Nombre de la tarea</string>
+    <string name="teacher">Profesor</string>
+    <string name="thursday">Jueves</string>
+    <string name="title_assistance">Asistencia</string>
+    <string name="title_calendar">Calendario</string>
+    <string name="title_exams">Exámenes</string>
+    <string name="title_tasks">Tareas</string>
+    <string name="title_timetable">Horario</string>
+    <string name="today">Hoy</string>
+    <string name="tuesday">Martes</string>
+    <string name="wednesday">Miércoles</string>
+    <string name="breaktime">RECREO</string>
+</resources>

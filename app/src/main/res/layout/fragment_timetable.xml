@@ -1,12 +1,15 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="sergiotx.github.io.clase.Fragments.Fragment_Timetable">
 
     <TableLayout
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:stretchColumns="*"> <!-- stretch all columns -->
 
         <TableRow>
@@ -101,7 +104,7 @@
             <TextView
                 android:layout_span="5"
                 android:background="@color/md_grey_500"
-                android:text="RECREO"
+                android:text="@string/breaktime"
                 android:textAlignment="center" />
         </TableRow>
 
@@ -182,4 +185,13 @@
 
     </TableLayout>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/edithelp"
+        android:text="*Touch a square to change it"
+        android:layout_marginTop="15dp"
+        android:paddingRight="10dp"
+        android:textAlignment="viewEnd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

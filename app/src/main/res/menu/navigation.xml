@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
-        <!--<item
+        <item
             android:id="@+id/navigation_assistance"
             android:enabled="true"
             android:icon="@drawable/absence"
-            android:title="@string/title_assistance" />-->
+            android:title="@string/title_assistance" />
 
         <item
             android:id="@+id/navigation_tasks"
@@ -19,7 +19,7 @@
             android:icon="@drawable/timetable"
             android:title="@string/title_timetable" />
 
-        <!--<item
+        <item
             android:id="@+id/navigation_exams"
             android:enabled="true"
             android:icon="@drawable/exam"
@@ -29,11 +29,12 @@
             android:id="@+id/navigation_calendar"
             android:enabled="true"
             android:icon="@drawable/calendar"
-            android:title="@string/title_calendar" />-->
+            android:title="@string/title_calendar" />
 
         <item
             android:id="@+id/navigation_subjects"
             android:icon="@drawable/subject"
+            android:enabled="true"
             android:title="@string/subjects" />
 
         <!--<item

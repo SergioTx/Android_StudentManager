@@ -99,7 +99,11 @@ public class CreateNewSubject extends Fragment {
                     @Override
                     public void onChooseColor(int position, int color) {
                         int[] some_array = getResources().getIntArray(R.array.subject_colors);
-                        Log.d("onChooseColor","COLORS: " + some_array);
+                        Log.d("onChooseColor","COLORS1!!!: " + color);
+                        int colorChoosed = some_array[position];
+                        Log.d("onChooseColor","COLORS2!!!: " + colorChoosed);
+
+
                         subject.setColor(color);
                         img.setColorFilter(color);
                     }
